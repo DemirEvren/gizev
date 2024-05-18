@@ -45,6 +45,9 @@
             font-size: 1.5rem;
             color: #fff;
         }
+        .error-message {
+            color: #e74c3c; /* Red color for error messages */
+        }
     </style>
 </head>
 <body>
@@ -54,7 +57,9 @@
                 <input type="password" id="passwordInput" class="form-control password-input" placeholder="Enter Password">
             </div>
         </form>
-        <div id="successMessage" class="success-message">Seni cok seviyorum ASKITOM</div>
+        <div id="successMessage" class="success-message">You found it! I'm proud of you son.</div>
+        <div id="errorMessage" class="error-message"></div>
+
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
@@ -65,10 +70,38 @@
                 event.preventDefault(); // Prevent default form submission on Enter
                 const passwordInput = document.getElementById('passwordInput');
                 const successMessage = document.getElementById('successMessage');
-                const correctPassword = 'gizem'; // Set the correct password here
+                const errorMessage = document.getElementById('errorMessage');
+
+                const correctPassword = 'gizev'; // Set the correct password here
+const errorMessages = [
+                    "I know you can do it!",
+                    "Don't be discouraged!",
+                    "Try again, you got this!",
+                    "Oops! That's not it.",
+                    "Keep trying!",
+                    "Almost there!",
+                    "Not quite, try again!",
+                    "Close, but no cigar!",
+                    "You can do it!",
+                    "Stay strong, keep going!",
+                    "Incorrect, try once more!",
+                    "Better luck next time!",
+                    "Keep calm and try again!",
+                    "Nope, that's not it!",
+                    "Keep pushing!",
+                    "Wrong password, try again!",
+                    "Don't give up!",
+                    "Believe in yourself!",
+                    "Password rejected, try again!",
+                    "Keep at it!"
+                ];
 
                 if (passwordInput.value !== correctPassword) {
                     passwordInput.classList.add('shake');
+                    const randomMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
+                    errorMessage.innerText = randomMessage;
+                    errorMessage.style.display = 'block';
+
                     setTimeout(() => {
                         passwordInput.classList.remove('shake');
                     }, 500);
