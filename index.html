@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Input Page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2c3e50; /* Darkish blue background */
+        }
+        .password-input {
+            background-color: #1a252f; /* Darker tone of the background color */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .password-input::placeholder {
+            color: #ccc;
+        }
+    </style>
+</head>
 <body>
-
-<h1>Evren Demir</h1>
-
-<p>GIZI, I LUV YOUR GOT</p>
-
+    <div class="container text-center">
+        <form>
+            <div class="form-group">
+                <input type="password" class="form-control password-input" placeholder="Enter Password">
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
