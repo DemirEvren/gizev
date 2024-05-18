@@ -104,6 +104,8 @@ const errorMessages = [
 
                     setTimeout(() => {
                         passwordInput.classList.remove('shake');
+                        errorMessage.style.display = 'none';
+
                     }, 500);
                 } else {
                     passwordInput.style.display = 'none';
