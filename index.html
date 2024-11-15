@@ -3,121 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gizev</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="icon" href="logo.jpeg" type="image/jpeg">
-
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #2c3e50; /* Darkish blue background */
-        }
-        .password-input {
-            background-color: #1a252f; /* Darker tone of the background color */
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .password-input::placeholder {
-            color: #ccc;
-        }
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            10% { transform: translateX(-5px); }
-            20% { transform: translateX(5px); }
-            30% { transform: translateX(-5px); }
-            40% { transform: translateX(5px); }
-            50% { transform: translateX(-5px); }
-            60% { transform: translateX(5px); }
-            70% { transform: translateX(-5px); }
-            80% { transform: translateX(5px); }
-            90% { transform: translateX(-5px); }
-            100% { transform: translateX(0); }
-        }
-        .shake {
-            animation: shake 0.5s;
-        }
-        .success-message {
-            display: none;
-            font-size: 1.5rem;
-            color: #fff;
-        }
-        .error-message {
-            color: #e74c3c; /* Red color for error messages */
-        }
-        #favicon {
-            border-radius: 50%;
-        }
-    </style>
+    <title>Evren Demir - Home</title>
+    
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Playwrite+GB+S:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/SVG/logo.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <div class="container text-center">
-        <form id="passwordForm">
-            <div class="form-group">
-                <input type="password" id="passwordInput" class="form-control password-input" placeholder="Enter Password">
-            </div>
-        </form>
-        <div id="successMessage" class="success-message">You found it! I'm proud of you son.</div>
-        <div id="errorMessage" class="error-message"></div>
-
+    <div class="background-container">
+        
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        document.getElementById('passwordInput').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                event.preventDefault(); // Prevent default form submission on Enter
-                const passwordInput = document.getElementById('passwordInput');
-                const successMessage = document.getElementById('successMessage');
-                const errorMessage = document.getElementById('errorMessage');
+    
+    <!-- Initial name that fades and slides to the top -->
+    <div class="name playwrite-gb-s" id="name">Evren Demir</div>
+    
+    <!-- Rotated SVG animation of merged E and G symbol with gradient -->
+    <div class="symbol-container" id="name-svg" style="display: none;">
+        <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:#ed6519;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#d8aaaa;stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            <g transform="rotate(-45 70 20)">
+                <path class="symbol-path" d="M72.5,10 L50,10 L50,50 L72.5,50 L72.5,70 H32.5 V30 H65" 
+                      fill="none" stroke="url(#gradient1)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+        </svg>
+    </div>
 
-                const correctPassword = 'gizev'; // Set the correct password here
-const errorMessages = [
-                    "I know you can do it!",
-                    "Don't be discouraged!",
-                    "Try again, you got this!",
-                    "Oops! That's not it.",
-                    "Keep trying!",
-                    "Almost there!",
-                    "Not quite, try again!",
-                    "Close, but no cigar!",
-                    "You can do it!",
-                    "Stay strong, keep going!",
-                    "Incorrect, try once more!",
-                    "Better luck next time!",
-                    "Keep calm and try again!",
-                    "Nope, that's not it!",
-                    "Keep pushing!",
-                    "Wrong password, try again!",
-                    "Don't give up!",
-                    "Believe in yourself!",
-                    "Password rejected, try again!",
-                    "Keep at it!"
-                ];
-
-                if (passwordInput.value !== correctPassword) {
-                    passwordInput.classList.add('shake');
-                    const randomMessage = errorMessages[Math.floor(Math.random() * errorMessages.length)];
-                    errorMessage.innerText = randomMessage;
-                    errorMessage.style.display = 'block';
-
-                    setTimeout(() => {
-                        passwordInput.classList.remove('shake');
-                        errorMessage.style.display = 'none';
-
-                    }, 5000);
-                } else {
-                    passwordInput.style.display = 'none';
-                    successMessage.style.display = 'block';
-                }
-            }
-        });
-    </script>
+    <div class="action-buttons" id="action-buttons" style="display: none;">
+        <button class="action-button" id="download-resume">Download Resume</button>
+        <button class="action-button" id="see-profile">See Profile</button>
+    </div>
+    
+    <!-- Modal for Download Resume -->
+    <div class="modal" id="resume-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2>Select a Resume to Download</h2>
+            <ul>
+                <li><a href="/resumes/Evren-Demir-english-resume.pdf" download>English-Resume.pdf</a></li>
+                <li><a href="/resumes/Evren-Demir-dutch-resume.pdf" download>Dutch-Resume.pdf</a></li>
+                <li><a href="/resumes/Evren-Demir-german-resume.pdf" download>German-Resume.pdf</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    <!-- <div class="grid-container">
+        <div class="grid-item item1">Item 1</div>
+        <div class="grid-item item2">Item 2</div>
+        <div class="grid-item item3">Item 3</div>
+        <div class="grid-item item4">Item 4</div>
+        <div class="grid-item item5">Item 5</div>
+        <div class="grid-item item6">Item 6</div>
+    </div> -->
+    
+    <script src="JS/index.js"></script>
 </body>
 </html>
+
+    
+    
+    <!-- Rotated SVG animation of merged E and G symbol with gradient -->
+    <!-- <div class="symbol-container">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+             
+            <defs>
+                <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:rgb(56,182,255);stop-opacity:1" />
+                </linearGradient>
+            </defs>
+            
+            <g transform="rotate(-45 70 50)">
+                <path class="symbol-path" d="M72.5,10 L50,10 L50,50 L72.5,50 L72.5,70 H32.5 V30 H65" 
+                      fill="none" stroke="url(#gradient1)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+        </svg>
+    </div>
+     -->

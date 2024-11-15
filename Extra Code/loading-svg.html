@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evren Demir - Home</title>
+    
+    <!-- Load Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Playwrite+GB+S:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="/SVG/logo.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <style>
+
+.symbol-path {
+    fill: none; /* No fill, just outline */
+    stroke: url(#gradient1); /* Apply gradient stroke ##newly added */
+    stroke-width: 6; /* Width of the line */
+    stroke-linecap: round; /* Rounded stroke ends */
+    stroke-linejoin: round; /* Rounded corners */
+    stroke-dasharray: 700; /* Length of the path for animation */
+    stroke-dashoffset: 700; /* Start the dash offset at full length */
+    animation: drawSymbol 10s ease forwards; /* Animation to draw the symbol */
+}
+/* SVG WITH LOADING EFFECT */
+/* Loading logo path styling and animation */
+.symbol-container-path {
+    fill: none; /* No fill, only stroke with gradient */
+    stroke-width: 6; /* Width of the stroke */
+    stroke-linecap: round; /* Rounded stroke ends */
+    stroke-linejoin: round; /* Rounded corners */
+    stroke-dasharray: 700; /* Length of the path for dash animation */
+    stroke-dashoffset: 700; /* Start dash offset at full length */
+    animation: drawLoadingPath 10s ease  forwards; /* Animation to progressively draw path */
+}
+
+@keyframes drawLoadingPath {
+    to {
+        stroke-dashoffset: 0; /* Fully draws the path, creating a loading effect */
+    }
+}
+    </style>
+</head>
+<body>
+    
+
+    <!-- SVG WITH LOADING EFFECT -->
+     <div class="symbol-container">
+        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            Gradient Definition with Animation for Loading Effect
+            <defs>
+                <linearGradient id="loading-gradient" x1="0%" y1="100%" x2="0%" y2="0%">
+                    <stop offset="0%" stop-color="rgb(255,0,0)" stop-opacity="1">
+                        <animate attributeName="offset" values="0;1" dur="6s" repeatCount="indefinite" />
+                    </stop>
+                    <stop offset="100%" stop-color="rgb(56,182,255)" stop-opacity="1">
+                        <animate attributeName="offset" values="0;1" dur="6s" repeatCount="indefinite" />
+                    </stop>
+                </linearGradient>
+            </defs>
+            
+            <g transform="rotate(-45 70 50)">
+                <path class="symbol-container-path" d="M72.5,10 L50,10 L50,50 L72.5,50 L72.5,70 H32.5 V30 H65" 
+                      fill="none" stroke="url(#loading-gradient)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            </g>
+        </svg>
+    </div>
+
+    
+    
+    
+
+    <script src="JS/index.js"></script>
+</body>
+</html>
