@@ -104,7 +104,7 @@ body, html {
 .action-buttons {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     margin-top: 1rem; /* Space between SVG and buttons */
     position: absolute;
     top: 50%; /* Adjust this based on the SVG size */
@@ -117,10 +117,10 @@ body, html {
 /* Style for each button */
 .action-button {
     font-family: "Playwrite GB S", cursive;
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    padding: 1rem 2rem;
-    background-color: rgb(141, 165, 197);
-    color: white;
+    font-size: clamp(0.9rem, 1vw, 1rem);
+    padding: 0.6rem 3rem;
+    background-color: rgb(113, 135, 163);
+    color: rgb(247, 240, 216);
     border-radius: 10px;
     cursor: pointer;
     opacity: 0.8;
@@ -135,8 +135,7 @@ body, html {
 
 /* Modal styling */
 .modal {
-    font-family: "Playwrite GB S", cursive;
-
+    font-family: "Roboto";
     display: none; /* Hidden by default */
     position: fixed;
     top: 0;
@@ -169,6 +168,9 @@ body, html {
     padding: 0;
     margin: 0;
 }
+.modal-content ul li {
+    margin: 10px 0; /* Add spacing between list items */
+}
 
 .modal-content li {
     margin: 1rem 0;
@@ -191,4 +193,50 @@ body, html {
     right: 10px;
     font-size: 2rem;
     cursor: pointer;
+}
+
+
+/* Icon styles */
+.resume-icon {
+    display: inline-block; /* Ensure the icon aligns like text */
+    width: 20px; /* Set a consistent width */
+    height: 20px; /* Set a consistent height */
+    margin-right: 10px; /* Add spacing between the icon and text */
+    object-fit: contain; /* Ensure the icon fits within its bounding box */
+    vertical-align: middle; /* Align icon with the text */
+}
+
+/* Responsive adjustments for smaller screens */
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .action-buttons {
+        padding: 0 30%; /* Increase left/right space on smaller screens */
+        gap: 2rem; /* Reduce spacing between buttons */
+    }
+
+    .action-button {
+        width: 100%; /* Buttons take full width of the container */
+        font-size: clamp(0.9rem, 1.5vw, 1.2rem); /* Adjust font size for smaller devices */
+        padding: 0.8rem 2rem; /* Reduce vertical padding for smaller screens */
+        white-space: nowrap;    
+    }
+
+}
+
+/* Adjustments for smaller screens */
+@media (max-height: 500px) {
+    .action-buttons {
+        padding: 0 60%; /* Increase left/right space on smaller screens */
+        gap: 2rem; /* Reduce spacing between buttons */
+        margin-top: 6rem;
+    }
+
+    .action-button {
+        width: 100%; /* Buttons take full width of the container */
+        font-size: clamp(0.9rem, 1.5vw, 1.2rem); /* Adjust font size for smaller devices */
+        padding: 0.8rem 2rem; /* Reduce vertical padding for smaller screens */
+        white-space: nowrap;    
+    }
+
 }
